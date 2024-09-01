@@ -1,0 +1,6 @@
+flask
+pandas
+transformers
+torch
+torchvision
+torchaudio
