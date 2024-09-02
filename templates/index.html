@@ -18,8 +18,7 @@
                 <h2>Analyze Text</h2>
                 <form action="/" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="text">Enter text for sentiment analysis:</label>
-                        <textarea name="text" id="text" rows="4"></textarea>
+                        <textarea name="text" id="text" rows="4" placeholder="Enter text for sentiment analysis"></textarea>
                     </div>
                     <button type="submit" class="btn">Analyze Text</button>
                 </form>
@@ -29,14 +28,14 @@
                 <h2>Analyze CSV File</h2>
                 <form action="/" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="file">Upload CSV file for sentiment analysis:</label>
-                        <div class="file-input">
-                            <input type="text" id="file-name" readonly>
-                            <label for="file" class="btn">Choose File</label>
-                            <input type="file" name="file" id="file" accept=".csv" onchange="updateFileName()">
+                        <label for="file" class="file-label-text">Upload CSV file for sentiment analysis:</label>
+                        <div class="file-upload">
+                            <label for="file" class="btn file-label">Choose File</label>
+                            <input type="file" name="file" id="file" accept=".csv" onchange="updateFileName()" hidden>
+                            <p id="file-name" class="file-name"></p>
                         </div>
                     </div>
-                    <button type="submit" class="btn">Analyze CSV</button>
+                    <button type="submit" class="btn center-btn">Analyze CSV</button>
                 </form>
             </div>
         </main>
@@ -45,8 +44,8 @@
     <script>
         function updateFileName() {
             const fileInput = document.getElementById('file');
-            const fileNameInput = document.getElementById('file-name');
-            fileNameInput.value = fileInput.files[0].name;
+            const fileName = document.getElementById('file-name');
+            fileName.textContent = fileInput.files[0].name || "";
         }
     </script>
 </body>

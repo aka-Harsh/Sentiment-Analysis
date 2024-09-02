@@ -10,6 +10,7 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     background-color: #f5f5f5;
+    color: #333;
 }
 
 .container {
@@ -50,6 +51,7 @@ p {
 
 .form-group {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 label {
@@ -59,7 +61,7 @@ label {
     margin-bottom: 5px;
 }
 
-textarea, .file-input {
+textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -68,21 +70,9 @@ textarea, .file-input {
     font-size: 16px;
 }
 
-.file-input {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.file-input input[type="text"] {
-    flex-grow: 1;
-    border: none;
-    cursor: default;
-}
-
 .btn {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #28a745;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -94,7 +84,22 @@ textarea, .file-input {
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #218838;
+}
+
+.center-btn {
+    display: block;
+    margin: 0 auto;
+}
+
+.file-label {
+    display: inline-block;
+    background-color: #28a745;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
 }
 
 /* Result Styles */
@@ -134,4 +139,32 @@ textarea, .file-input {
 .sentiment-badge.very-negative {
     background-color: #fff0f0;
     color: #c0392b;
+}
+
+/* Link Styles */
+.no-underline {
+    text-decoration: none;
+    background-color: #28a745;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.no-underline:hover {
+    background-color: #218838;
+}
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust gap as needed */
+}
+
+.file-label-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px; /* Adjust margin as needed */
+    font-weight: 500;
+    color: #555;
 }
