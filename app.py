@@ -11,18 +11,19 @@ def index():
     if request.method == 'POST':
         if 'file' in request.files:
             file = request.files['file']
-            if file.filename.endswith('.csv' or '.xlsx'):
+            if file.filename.endswith('.csv'):
                 df = pd.read_csv(file)
                 if 'feedback' in df.columns:
                     df['sentiment'] = df['feedback'].apply(sentiment_analyzer.analyze_sentiment)
                     output = io.BytesIO()
+                    output_filename = f"{file.filename.split('.')[0]}_sentiments.csv"
                     df.to_csv(output, index=False, encoding='utf-8')
                     output.seek(0)
-                    return send_file(output, mimetype='text/csv', as_attachment=True, download_name='sentiment_analysis_results.csv')
+                    return send_file(output, mimetype='text/csv', as_attachment=True, download_name=output_filename)
                 else:
-                    return "CSV file must contain a 'feedback' column."
+                    return render_template('index.html', error='CSV file must contain a "feedback" column.')
             else:
-                return "Please upload a CSV file."
+                return render_template('index.html', error='Please upload a CSV file.')
         elif 'text' in request.form:
             text = request.form['text']
             sentiment = sentiment_analyzer.analyze_sentiment(text)
