@@ -1,25 +1,51 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+/* Reset */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
 }
 
 .container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    margin-top: 50px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 h1 {
+    font-size: 32px;
+    font-weight: 700;
     color: #333;
-    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #666;
+}
+
+/* Form Styles */
+.input-container {
+    margin-bottom: 30px;
 }
 
 .form-group {
@@ -28,42 +54,84 @@ h1 {
 
 label {
     display: block;
+    font-weight: 500;
+    color: #555;
     margin-bottom: 5px;
 }
 
-textarea, input[type="file"] {
+textarea, .file-input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: 12px;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
 }
 
-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #333;
+.file-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.file-input input[type="text"] {
+    flex-grow: 1;
+    border: none;
+    cursor: default;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
-    margin-top: 10px;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #555;
+.btn:hover {
+    background-color: #0056b3;
 }
 
-.button {
+/* Result Styles */
+.result-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sentiment-badge {
     display: inline-block;
-    background-color: #333;
-    color: #fff;
     padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 18px;
 }
 
-.button:hover {
-    background-color: #555;
+.sentiment-badge.very-positive {
+    background-color: #e6fff0;
+    color: #00b894;
+}
+
+.sentiment-badge.positive {
+    background-color: #d4f1e6;
+    color: #2ecc71;
+}
+
+.sentiment-badge.neutral {
+    background-color: #f4f4f4;
+    color: #7f8c8d;
+}
+
+.sentiment-badge.negative {
+    background-color: #ffece6;
+    color: #e74c3c;
+}
+
+.sentiment-badge.very-negative {
+    background-color: #fff0f0;
+    color: #c0392b;
 }

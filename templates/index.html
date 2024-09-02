@@ -8,21 +8,46 @@
 </head>
 <body>
     <div class="container">
-        <h1>Sentiment Analysis</h1>
-        <form action="/" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="text">Enter text for sentiment analysis:</label>
-                <textarea name="text" id="text" rows="4"></textarea>
-                <button type="submit">Analyze Text</button>
+        <header>
+            <h1>Sentiment Analysis</h1>
+            <p>Analyze text or a CSV file and get sentiment insights.</p>
+        </header>
+
+        <main>
+            <div class="input-container">
+                <h2>Analyze Text</h2>
+                <form action="/" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="text">Enter text for sentiment analysis:</label>
+                        <textarea name="text" id="text" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Analyze Text</button>
+                </form>
             </div>
-        </form>
-        <form action="/" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="file">Upload CSV file for sentiment analysis:</label>
-                <input type="file" name="file" id="file" accept=".csv">
-                <button type="submit">Analyze CSV</button>
+
+            <div class="input-container">
+                <h2>Analyze CSV File</h2>
+                <form action="/" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="file">Upload CSV file for sentiment analysis:</label>
+                        <div class="file-input">
+                            <input type="text" id="file-name" readonly>
+                            <label for="file" class="btn">Choose File</label>
+                            <input type="file" name="file" id="file" accept=".csv" onchange="updateFileName()">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn">Analyze CSV</button>
+                </form>
             </div>
-        </form>
+        </main>
     </div>
+
+    <script>
+        function updateFileName() {
+            const fileInput = document.getElementById('file');
+            const fileNameInput = document.getElementById('file-name');
+            fileNameInput.value = fileInput.files[0].name;
+        }
+    </script>
 </body>
 </html>

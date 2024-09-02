@@ -8,9 +8,17 @@
 </head>
 <body>
     <div class="container">
-        <h1>Sentiment Analysis Result</h1>
-        <p>The sentiment of the text is: <strong>{{ sentiment }}</strong></p>
-        <a href="/" class="button">Back to Home</a>
+        <header>
+            <h1>Sentiment Analysis Result</h1>
+        </header>
+
+        <main>
+            <div class="result-container">
+                <p>The sentiment of the text is:</p>
+                <div class="sentiment-badge {{ sentiment.lower() }}">{{ sentiment }}</div>
+            </div>
+            <a href="/" class="btn">Back to Home</a>
+        </main>
     </div>
 </body>
 </html>
