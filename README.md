@@ -13,40 +13,40 @@
 <img width="12" />
 
 ## Video Demo
-🎥 Here you can find a video of the working project
+🎥 Here you can find a video of the working project.
 
 https://github.com/user-attachments/assets/7fe2ed90-ef1c-4c00-b866-7ea4ea641a89
 
 ## Prerequisites
 
-Install Python on your system 👉 [Python](https://www.python.org/downloads/)
+Install Python on your system 👉 [Python](https://www.python.org/downloads/).
 <br><br>
-Please upload a .csv file for the analysis and make sure the **Customer Feedback** column is named **feedback**
+Please upload a .csv file for the analysis and make sure the **Customer Feedback** column is named **feedback**.
 
 ## Deployment
 
-To run this project first clone this repository using
+To run this project first clone this repository using:
 
 ```bash
   git clone https://github.com/aka-Harsh/Sentiment-Analysis.git
 ```
-Locate this repository using terminal and then create a virtual enviroment and activate it using
+Locate this repository using terminal and then create a virtual enviroment and activate it using:
 
 ```bash
   python -m venv venv
   .\venv\Scripts\activate
 ```
-Perform this in your VScode editor to select python intepreter
+Perform this in your VScode editor to select python intepreter:
 ```bash
   Select View > Command Palette > Python: Select Interpreter > Enter Interpreter path > venv > Script > python.exe
 ```
 
-Install all the required packages 
+Install all the required packages:
 ```bash
   pip install -r requirements.txt
 ```
 
-Finally run the app.py file
+Finally run the app.py file:
 ```bash
   python app.py
 ```
